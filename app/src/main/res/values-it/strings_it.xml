@@ -2,5 +2,5 @@
 <resources>
     <string name="text_bouton_calcul">Calcul en italien</string>
     <string name = "text_bouton_dernier_calcul"> Dernier Calcul en italien </string>
-
+    <string name= "toolbar_nettoyer_text"> Nettoyer en italien</string>
 </resources>

@@ -16,4 +16,5 @@
     <string name ="button_substract_text" translatable="false">-</string>
     <string name="button_divide_text" translatable="false">/</string>
     <string name="button_multiply_text" translatable="false">x</string>
+    <string name= "toolbar_nettoyer_text"> Nettoyer</string>
 </resources>
