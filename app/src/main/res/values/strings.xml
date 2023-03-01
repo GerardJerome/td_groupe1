@@ -13,8 +13,14 @@
     <string name="button_9_text" translatable="false">9</string>
     <string name="button_0_text" translatable="false">0</string>
     <string name="button_plus_text" translatable="false">+</string>
-    <string name ="button_substract_text" translatable="false">-</string>
+    <string name="button_substract_text" translatable="false">-</string>
     <string name="button_divide_text" translatable="false">/</string>
     <string name="button_multiply_text" translatable="false">x</string>
-    <string name= "toolbar_nettoyer_text"> Nettoyer</string>
+    <string name="toolbar_nettoyer_text"> Nettoyer</string>
+    <string name="toolbar_calcul"> Fais le calcul</string>
+    <string name="ERROR_SYMBOL">Il y déjà un symbole dans le calcul</string>
+    <string name="ERROR_EMPTY_CALCUL"> Le calcul est vide</string>
+    <string name="ERROR_TOO_LONG"> Le terme ne peut pas depasser 9999</string>
+    <string name="DIVIDE_ZERO">Tu fais une division par zero</string>
+    <string name="BAD_CALCUL">Calcul malformé</string>
 </resources>

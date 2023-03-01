@@ -4,4 +4,8 @@
     <item
         android:id="@+id/toolbar_nettoyer"
         android:title="@string/toolbar_nettoyer_text" />
+    <item
+        android:id="@+id/toolbar_calcul"
+        android:title="@string/toolbar_calcul"
+        app:showAsAction="always"/>
 </menu>

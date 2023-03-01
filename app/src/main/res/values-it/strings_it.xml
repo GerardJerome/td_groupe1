@@ -3,4 +3,15 @@
     <string name="text_bouton_calcul">Calcul en italien</string>
     <string name = "text_bouton_dernier_calcul"> Dernier Calcul en italien </string>
     <string name= "toolbar_nettoyer_text"> Nettoyer en italien</string>
+    <string name = "toolbar_calcul"> Fais le calcul en italien</string>
+    <string name = "ERROR_SYMBOL">Il y déjà un symbole dans le calcul en italien</string>
+    <string name = "ERROR_EMPTY_CALCUL"> Le calcul est vide en italien</string>
+    <string name = "ERROR_TOO_LONG"> Le terme ne peut pas depasser 9999 en italien</string>
+    <string name="DIVIDE_ZERO">Tu fais une division par zero en italien</string>
+    <string name="BAD_CALCUL">Calcul malformé en italien</string>
+
+
+
+
+
 </resources>
