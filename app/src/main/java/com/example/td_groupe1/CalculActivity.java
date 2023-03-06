@@ -103,12 +103,12 @@ public class CalculActivity extends AppCompatActivity {
 
     private boolean verifieLeCalcul(String calcul) {
         return !calcul.isEmpty()
-                && TypeOperationEnum.isSymboleAlreadyPresent
+                && !TypeOperationEnum.isSymboleAlreadyPresent
                 (String.valueOf(calcul.trim().charAt(calcul.trim().length() - 1)));
     }
 
     private boolean faisLeCalcul(String calcul) {
-        Integer result;
+        Integer result = 0;
         String[] termeCalcul;
         if (verifieLeCalcul(calcul)) {
             switch (TypeOperationEnum.wichOneInTheString(calcul)) {
@@ -122,6 +122,7 @@ public class CalculActivity extends AppCompatActivity {
                         result = Integer.parseInt(termeCalcul[0]) / Integer.parseInt(termeCalcul[1]);
                     } else {
                         Toast.makeText(this, getString(R.string.DIVIDE_ZERO), Toast.LENGTH_LONG).show();
+                        return true;
                     }
                     break;
                 case MULTIPLY:
@@ -132,6 +133,8 @@ public class CalculActivity extends AppCompatActivity {
                     termeCalcul = calcul.split(TypeOperationEnum.SUBSTRACT.getSymbole());
                     result = Integer.parseInt(termeCalcul[0]) - Integer.parseInt(termeCalcul[1]);
                     break;
+                case ERROR:
+                    result=Integer.parseInt(calcul);
                 default:
                     break;
             }
@@ -141,6 +144,8 @@ public class CalculActivity extends AppCompatActivity {
         }
 
         Intent intent = new Intent(this, ResultatActivity.class);
+        intent.putExtra("CALCUL",calcul);
+        intent.putExtra("RESULTAT",result);
         startActivity(intent);
         return true;
     }
