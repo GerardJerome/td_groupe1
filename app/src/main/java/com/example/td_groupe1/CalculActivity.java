@@ -11,7 +11,10 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.td_groupe1.DAO.CalculBaseHelper;
+import com.example.td_groupe1.DAO.CalculDao;
 import com.example.td_groupe1.enums.TypeOperationEnum;
+import com.example.td_groupe1.model.entities.Calcul;
 
 import java.util.regex.Pattern;
 
@@ -35,6 +38,8 @@ public class CalculActivity extends AppCompatActivity {
     private Button buttonMultiply;
     private Button buttonDivide;
     private Button buttonZero;
+
+    private CalculDao calculDao;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,6 +74,7 @@ public class CalculActivity extends AppCompatActivity {
         buttonMultiply.setOnClickListener(view -> ajouterSymbole(TypeOperationEnum.MULTIPLY.getSymbole()));
         buttonZero = findViewById(R.id.button_0);
         buttonZero.setOnClickListener(view -> ajouterCharactere("0"));
+        calculDao = new CalculDao(new CalculBaseHelper(this,"BDD",1));
 
 
     }
@@ -146,11 +152,16 @@ public class CalculActivity extends AppCompatActivity {
         Intent intent = new Intent(this, ResultatActivity.class);
         intent.putExtra("CALCUL",calcul);
         intent.putExtra("RESULTAT",result);
+        enregistreLeCalcul(result);
         startActivity(intent);
         return true;
     }
 
 
+    private void enregistreLeCalcul(Integer resultat){
+        Calcul monCalcul = new Calcul(calcul,resultat);
+        calculDao.create(monCalcul);
+    }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater menuInflater = getMenuInflater();

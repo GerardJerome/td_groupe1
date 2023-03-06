@@ -5,7 +5,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 
-import com.example.td_groupe1.model.Entities.BaseEntity;
+import com.example.td_groupe1.model.entities.BaseEntity;
 
 import java.util.ArrayList;
 import java.util.List;

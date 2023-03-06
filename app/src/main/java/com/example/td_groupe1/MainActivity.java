@@ -10,6 +10,7 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity {
 
     private Button boutonCalcul;
+    private Button boutonDernierCalcul;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +19,12 @@ public class MainActivity extends AppCompatActivity {
         boutonCalcul = findViewById(R.id.boutonBonjour);
         boutonCalcul.setOnClickListener(view -> {
             Intent intent = new Intent(MainActivity.this,CalculActivity.class);
+            startActivity(intent);
+        });
+
+        boutonDernierCalcul = findViewById(R.id.boutonDernierCalcul);
+        boutonDernierCalcul.setOnClickListener(view -> {
+            Intent intent = new Intent(MainActivity.this,LastActivity.class);
             startActivity(intent);
         });
     }
